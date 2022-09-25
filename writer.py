@@ -2,7 +2,13 @@
 
 import random
 import time
+import sys
+import os
 from PIL import Image, ImageDraw, ImageFont
+
+def resource_path(relative_path):
+    base_path = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
+    return os.path.join(base_path, relative_path)
 
 try:
     def startScreen():
@@ -45,7 +51,12 @@ try:
 
     startScreen()
 
-    im = Image.open('paper.jpg')
+    image_path = resource_path('paper.jpg')
+    f1 = resource_path('1.ttf')
+    f2 = resource_path('2.ttf')
+    f3 = resource_path('3.ttf')
+    f4 = resource_path('4.ttf')
+    im = Image.open(image_path)
     IsRunning = True
     x = 340
     y = 70
@@ -55,10 +66,21 @@ try:
     l_text = ''
 
     font = isfont()
-    imToSave = str(random.randint(1,1000)) + '.jpg'
 
-    header_font = ImageFont.truetype(f'Files/{font}.ttf', size=150)
-    line_font = ImageFont.truetype(f'Files/{font}.ttf', size=90)
+    if font == '1':
+        header_font = ImageFont.truetype(f1, size=150)
+        line_font = ImageFont.truetype(f1, size=90)
+    elif font == '2':
+        header_font = ImageFont.truetype(f2, size=150)
+        line_font = ImageFont.truetype(f2, size=90)
+    elif font == '3':
+        header_font = ImageFont.truetype(f3, size=150)
+        line_font = ImageFont.truetype(f3, size=90)
+    elif font == '4':
+        header_font = ImageFont.truetype(f4, size=150)
+        line_font = ImageFont.truetype(f4, size=90)
+
+    imToSave = str(random.randint(1,1000)) + '.jpg'
 
     while IsRunning == True:
         typeInstruction()
@@ -97,7 +119,6 @@ try:
 except Exception:
     import traceback
     from win32.win32api import MessageBox
-    import sys
     exc_type, exc_value, exc_tb = sys.exc_info()
     traceback_exception = traceback.TracebackException(exc_type, exc_value, exc_tb)
     MessageBox(0, ''.join(traceback_exception.format()), "Сообщение об ошибке", 0)
