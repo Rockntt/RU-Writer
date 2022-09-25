@@ -6,18 +6,13 @@ from PIL import Image, ImageDraw, ImageFont
 
 try:
     def startScreen():
-        print(
-            '██████╗  ██████╗  ██████╗██╗  ██╗███╗   ██╗████████╗████████╗    ██╗    ██╗██████╗ ██╗████████╗███████╗██████╗     ██╗   ██╗     ██╗    ██████╗')
-        print(
-            '██╔══██╗██╔═══██╗██╔════╝██║ ██╔╝████╗  ██║╚══██╔══╝╚══██╔══╝    ██║    ██║██╔══██╗██║╚══██╔══╝██╔════╝██╔══██╗    ██║   ██║    ███║   ██╔═████╗')
-        print(
-            '██████╔╝██║   ██║██║     █████╔╝ ██╔██╗ ██║   ██║      ██║       ██║ █╗ ██║██████╔╝██║   ██║   █████╗  ██████╔╝    ██║   ██║    ╚██║   ██║██╔██║')
-        print(
-            '██╔══██╗██║   ██║██║     ██╔═██╗ ██║╚██╗██║   ██║      ██║       ██║███╗██║██╔══██╗██║   ██║   ██╔══╝  ██╔══██╗    ╚██╗ ██╔╝     ██║   ████╔╝██║')
-        print(
-            '██║  ██║╚██████╔╝╚██████╗██║  ██╗██║ ╚████║   ██║      ██║       ╚███╔███╔╝██║  ██║██║   ██║   ███████╗██║  ██║     ╚████╔╝      ██║██╗╚██████╔╝')
-        print(
-            '╚═╝  ╚═╝ ╚═════╝  ╚═════╝╚═╝  ╚═╝╚═╝  ╚═══╝   ╚═╝      ╚═╝        ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝   ╚═╝   ╚══════╝╚═╝  ╚═╝      ╚═══╝       ╚═╝╚═╝ ╚═════╝')
+        print('#########################################')
+        print('#                                       #')
+        print('# Writer by Rockntt                     #')
+        print('# V 1.0                                 #')
+        print('# https://github.com/Rockntt/writer.git #')
+        print('#                                       #')
+        print('#########################################')
         for i in range(2):
             print('')
 
@@ -62,8 +57,8 @@ try:
     font = isfont()
     imToSave = str(random.randint(1,1000)) + '.jpg'
 
-    header_font = ImageFont.truetype(f'Fonts/{font}.ttf', size=150) # Шрифты
-    line_font = ImageFont.truetype(f'Fonts/{font}.ttf', size=90)
+    header_font = ImageFont.truetype(f'Files/{font}.ttf', size=150)
+    line_font = ImageFont.truetype(f'Files/{font}.ttf', size=90)
 
     while IsRunning == True:
         typeInstruction()
